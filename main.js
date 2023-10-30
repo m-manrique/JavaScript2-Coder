@@ -157,7 +157,7 @@ const consultarCandidatos = () => {
         alert("Opción no válida. Elija una opción válida.");
         break;
     }
-  } while (opcion !== 5);
+  } while (opcion !== 6);
 };
 
 // Llama a la función menuElecciones2023 para mostrar el menú
