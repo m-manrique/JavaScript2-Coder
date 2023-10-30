@@ -75,16 +75,21 @@ function registrarCandidato() {
 }
 
 const consultarCandidatosPorEntidad = (entidad) => {
-  const candidatosEntidad = candidatos.filter((candidato) => candidato.entidad === entidad);
+  let candidatosEntidad;
+  if (entidad) {
+    candidatosEntidad = candidatos.filter((candidato) => candidato.entidad === entidad);
+  } else {
+    candidatosEntidad = candidatos;
+  }
 
   if (candidatosEntidad.length > 0) {
-    let mensaje = `Candidatos de ${entidad}:\n`;
+    let mensaje = entidad ? `Candidatos de ${entidad}:\n` : "Todos los candidatos:\n";
     candidatosEntidad.forEach((candidato) => {
       mensaje += `Nombre: ${candidato.nombre}, Edad: ${candidato.edad}, Género: ${candidato.genero}, Partido Político: ${candidato.partidoPolitico}\n`;
     });
     alert(mensaje);
   } else {
-    alert(`No hay candidatos de ${entidad}.`);
+    alert(entidad ? `No hay candidatos de ${entidad}.` : "No hay candidatos disponibles.");
   }
 };
 
