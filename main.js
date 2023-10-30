@@ -122,7 +122,8 @@ const consultarCandidatos = () => {
   menu2 += "2. Alcaldía\n";
   menu2 += "3. Concejo\n";
   menu2 += "4. Asamblea\n";
-  menu2 += "5. Volver al menu Anterior\n\n";
+  menu2 += "5. Todos los Candidatos registrados\n";
+  menu2 += "6. Volver al menu Anterior\n\n";
   menu2 += "Seleccione una Opción:";
 
   let opcion;
@@ -142,6 +143,9 @@ const consultarCandidatos = () => {
         consultarCandidatosPorEntidad("Asamblea");
         break;
       case 5:
+        consultarCandidatosPorEntidad();
+        break;
+      case 6:
         alert("Saliendo del menú de consulta de candidatos.");
         break;
       default:
